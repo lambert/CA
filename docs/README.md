@@ -40,5 +40,5 @@ OpenLog supports both FAT16 and FAT32 SD formats.
 
 - [Schematic](./OpenLog_v15.pdf)
 - [Eagle Files](../../ecad/eagle/)
-- [Hookup Guide](https://learn.sparkfun.com/tutorials/openlog-hookup-guide)
+- [Hookup Guide](hookup_guide/README.md)
 - [GitHub Hardware Repo](https://github.com/sparkfun/OpenLog)

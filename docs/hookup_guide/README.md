@@ -12,7 +12,11 @@ The [OpenLog Data Logger](https://www.sparkfun.com/products/13712)
 is a simple-to-use, open-source solution for logging serial data from your projects.
 The OpenLog provides a simple serial interface to log data from a project to a microSD card.
 
-![DEV-13712](./13712-SparkFun_OpenLog-01.jpg) ![DEV-13955](./13955-SparkFun_OpenLog_with_headers-01.jpg)
+![DEV-13712](./13712-SparkFun_OpenLog-01.jpg)
+<i>DEV-17312</i>.
+
+![DEV-13955](./13955-SparkFun_OpenLog_with_headers-01.jpg)
+<i>DEV-13955</i>.
 
 ## Materials Required
 
@@ -287,8 +291,8 @@ install the library.
 
 - [GitHub: OpenLog > Firmware > OpenLog_Firmware](https://github.com/sparkfun/OpenLog/tree/master/firmware/OpenLog_Firmware)
 - Bill Greiman's Arduino Libraries
-  -- [SdFatLib-beta](https://github.com/greiman/SdFat-beta)
-  -- [SerialPort](https://github.com/greiman/SerialPort)
+  - [SdFatLib-beta](https://github.com/greiman/SdFat-beta)
+  - [SerialPort](https://github.com/greiman/SerialPort)
 
 Next, to take advantage of the modified libraries, modify the <i>SerialPort.h</i> file found in
 <b>\Arduino\Libraries\SerialPort</b> directory.
@@ -339,7 +343,7 @@ The LED will stay on until the next character is received.
   [Standard 8.3](https://en.wikipedia.org/wiki/8.3_filename) filenames are supported.
   For example, "87654321.123" is acceptable, while "987654321.123" is not.
 
-  -- Example: <b>new file1.txt</b>
+  - Example: <b>new file1.txt</b>
 
 
 

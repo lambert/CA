@@ -52,7 +52,7 @@ If you are not familiar or comfortable with the following concepts, we recommend
 
 The OpenLog runs at the following settings:
 
-|                             |< OpenLog Power Ratings                                            |
+|                             | OpenLog Power Ratings                                             |
 |-----------------------------|-------------------------------------------------------------------|
 | VCC Input                   | 3.3 V - 12 V (Recommended 3.3V-5V)                                |
 | RXI Input                   | 2.0 V - 3.8 V                                                     |

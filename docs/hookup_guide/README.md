@@ -320,12 +320,12 @@ On power up, you will see either 12> or 12<.
 
 There are three included sketches you can use on the OpenLog, depending on your particular application.
 
-- <b>OpenLog</b> - This firmware ships by default on the OpenLog. Sending the ?
+- <b>OpenLog</b> -- This firmware ships by default on the OpenLog. Sending the ?
   command will show the firmware version loaded onto a unit.
-- <b>OpenLog_Light</b> - This version of the sketch removes the menu and command mode,
+- <b>OpenLog_Light</b> -- This version of the sketch removes the menu and command mode,
   allowing the receive buffer to be increased.
   This is a good option for high-speed logging.
-- <b>OpenLog_Minimal</b> - The baud rate must be set in code and uploaded.
+- <b>OpenLog_Minimal</b> -- The baud rate must be set in code and uploaded.
   This sketch is recommended for experienced users but is also the best option for the highest speed logging.
 
 ## Command Set
@@ -344,6 +344,42 @@ The LED will stay on until the next character is received.
   For example, "87654321.123" is acceptable, while "987654321.123" is not.
 
   - Example: <b>new file1.txt</b>
+
+- <b>append File</b> - Append text to the end of File. Serial data is then read from the UART in a stream
+  and adds it to the file.
+  It is not echoed over the serial terminal.
+  If File does not exist when this function is called, the file will be created.
+
+  - Example: <b>append newfile.csv</b>
+
+- <b>write File OFFSET</b> - Write text to File from the location OFFSET within the file.
+  The text is read from the UART, line by line and echoed back.
+  To exit this state, send an empty line.
+
+  - Example: <b>write logs.txt 516</b>
+
+- <b>rm File</b> - Deletes File from the current directory.
+  [Wildcards](https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/find_c_search_wildcard.mspx?mfr=true) are supported.
+
+  - Example: <b>rm README.txt</b>
+
+- <b>size File</b> - Output size of File in bytes.
+
+  - Example: <b>size Log112.csv</b>
+  - Output: 11
+
+- <b>read File + START+ LENGTH TYPE</b> - Output the content of <i>File</i> starting from <i>START</i> and going for <i>LENGTH</i>.
+  If <i>START</i> is omitted, the entire file is reported.
+  If <i>LENGTH</i> is omitted, the entire contents from the starting point is reported.
+  If <i>TYPE</i> is omitted, the OpenLog will default to reporting in ASCII.
+  There are three output TYPEs:
+
+  - ASCII = 1
+  - HEX = 2
+  - RAW = 3
+
+  You may leave off some trailing arguments.
+  Check the following examples.
 
 
 

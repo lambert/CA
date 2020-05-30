@@ -381,5 +381,28 @@ The LED will stay on until the next character is received.
   You may leave off some trailing arguments.
   Check the following examples.
 
+Basic read + omitted flags:
+
+Example: ```read LOG00004.txt```
+
+Output: ```Accelerometer X=12 Y=215 Z=317```
+
+Read from start 0 with length of 5:
+
+Example: ```read LOG00004.txt 0 5```
+
+Output: ```Accel```
+
+Read from position 1 with a length of 5 in HEX:
+
+Example: ```read LOG00004.txt 1 5 2```
+
+Output: ```63 63 65 6C```
+
+Read from position 0 with a length of 50 in RAW:
+
+Example: ```read LOG00137.txt 0 50 3```
+
+Output: ```André-- -þ Extended Character Test```
 
 

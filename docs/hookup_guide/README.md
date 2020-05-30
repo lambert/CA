@@ -343,30 +343,30 @@ The LED will stay on until the next character is received.
   [Standard 8.3](https://en.wikipedia.org/wiki/8.3_filename) filenames are supported.
   For example, "87654321.123" is acceptable, while "987654321.123" is not.
 
-  - Example: <b>new file1.txt</b>
+  - Example: ```new file1.txt```
 
 - <b>append File</b> - Append text to the end of File. Serial data is then read from the UART in a stream
   and adds it to the file.
   It is not echoed over the serial terminal.
   If File does not exist when this function is called, the file will be created.
 
-  - Example: <b>append newfile.csv</b>
+  - Example: ```append newfile.csv```
 
 - <b>write File OFFSET</b> - Write text to File from the location OFFSET within the file.
   The text is read from the UART, line by line and echoed back.
   To exit this state, send an empty line.
 
-  - Example: <b>write logs.txt 516</b>
+  - Example: ```write logs.txt 516```
 
 - <b>rm File</b> - Deletes File from the current directory.
   [Wildcards](https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/find_c_search_wildcard.mspx?mfr=true) are supported.
 
-  - Example: <b>rm README.txt</b>
+  - Example: ``rm README.txt```
 
 - <b>size File</b> - Output size of File in bytes.
 
-  - Example: <b>size Log112.csv</b>
-  - Output: 11
+  - Example: ```size Log112.csv```
+  - Output: ```11```
 
 - <b>read File + START+ LENGTH TYPE</b> - Output the content of <i>File</i> starting from <i>START</i> and going for <i>LENGTH</i>.
   If <i>START</i> is omitted, the entire file is reported.
@@ -381,28 +381,24 @@ The LED will stay on until the next character is received.
   You may leave off some trailing arguments.
   Check the following examples.
 
-Basic read + omitted flags:
+  Basic read + omitted flags:
 
-Example: ```read LOG00004.txt```
+  - Example: ```read LOG00004.txt```
+  - Output: ```Accelerometer X=12 Y=215 Z=317```
 
-Output: ```Accelerometer X=12 Y=215 Z=317```
+  Read from start 0 with length of 5:
 
-Read from start 0 with length of 5:
+  - Example: ```read LOG00004.txt 0 5```
+  - Output: ```Accel```
 
-Example: ```read LOG00004.txt 0 5```
+  Read from position 1 with a length of 5 in HEX:
 
-Output: ```Accel```
+  - Example: ```read LOG00004.txt 1 5 2```
+  - Output: ```63 63 65 6C```
 
-Read from position 1 with a length of 5 in HEX:
+  Read from position 0 with a length of 50 in RAW:
 
-Example: ```read LOG00004.txt 1 5 2```
-
-Output: ```63 63 65 6C```
-
-Read from position 0 with a length of 50 in RAW:
-
-Example: ```read LOG00137.txt 0 50 3```
-
-Output: ```André-- -þ Extended Character Test```
+  - Example: ```read LOG00137.txt 0 50 3```
+  - Output: ```André-- -þ Extended Character Test```
 
 
